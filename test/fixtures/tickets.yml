@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  priority: MyString
+  created_by: 
+  assigned_to: 
+  closed_by: 
+
+two:
+  title: MyString
+  description: MyText
+  priority: MyString
+  created_by: 
+  assigned_to: 
+  closed_by: 

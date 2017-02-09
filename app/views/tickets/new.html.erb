@@ -1,0 +1,22 @@
+<h1>Create a Ticket</h1>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<%= render partial: 'shared/error_messages',locals:{user_obj:@ticket} %>
+		<%= form_for (@ticket) do |f| %>
+			<%= f.label :title %>
+			<%= f.text_field :title, :autofocus => true,class: 'form-control'%>
+			
+			<%= f.label :description %>
+			<%= f.text_area :description, class: 'form-control' %>
+			
+			<% priorities = ["High","Normal","Low"] %>
+			<%= f.label :priority %>
+			<%= f.select :priority,options_for_select(priorities,"Normal") %>
+			
+			<%= f.hidden_field(:created_by,:value => session[:user_id]) %>
+			<%= f.submit "Create Ticket",class: "btn btn-primary" %>
+			
+		<% end %>
+	</div>
+</div>
+

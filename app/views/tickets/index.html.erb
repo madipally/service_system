@@ -1,0 +1,13 @@
+<h1> Tickets created by <%= current_user.name %> </h1>
+<div align="center">
+	<div  id="tickets_container">
+		<% if @tickets.count(:id) > 0 %>
+			<%= render partial:'tickets'%>
+		<% else %>
+		    <%= render partial:'no_tickets' %>
+		<% end %>
+	</div>
+</div>	
+<div id="tickets-paginator">
+	<%= paginate @tickets, :remote => true %>
+</div>	

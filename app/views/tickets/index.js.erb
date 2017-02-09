@@ -1,0 +1,2 @@
+ $('#tickets_container').html('<%= escape_javascript(raw(render partial:'tickets')) %>');
+ $('#tickets-paginator').html('<%= escape_javascript(paginate(@tickets,remote: true)) %>');

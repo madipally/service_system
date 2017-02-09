@@ -1,0 +1,28 @@
+<div class = "table-responsive table table-striped">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th> Sno </th>
+				<th> Title </th>
+				<th> Description </th>
+				<th> Priority </th>
+				<th> Created Date </th>
+			</tr>
+		</thead>
+		<tbody>	
+			
+			<%
+				cnt = 1
+				@tickets.each do |ticket| 
+			%>
+				<tr>
+					<td> <%= cnt %> </td>
+					<td> <%= ticket.title %> </td>
+					<td> <%= ticket.description %> </td>
+					<td> <%= ticket.priority %> </td>
+					<td> <%= ticket.created_on %> </td>
+				</tr>	
+			<% end %>
+		</tbody>
+	</table>
+</div>	

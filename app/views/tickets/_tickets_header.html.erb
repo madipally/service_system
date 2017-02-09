@@ -1,0 +1,11 @@
+<div class="col-md-12">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<% if current_user.type == "AdminUser" %>
+			   	<%= select_tag(:ticket_status,options_for_select(@users_with_tickets),:prompt => 'Assign to a user',:class => "cls_assign_ticket_user",:ajax_path => update_assignee_path) %>
+			<% end %>	
+		</div>
+		<div class="col-md-4">
+			<%= select_tag(:ticket_status,options_for_select(ticket_status_text.slice(:closed,:reopen)),:prompt => 'Select a Status',:class => "update_ticket_status",:ajax_path => update_ticket_path) %>
+		</div>		
+</div>
